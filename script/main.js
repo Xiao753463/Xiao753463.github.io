@@ -59,37 +59,40 @@ document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = true;
+        P1.rightPressed = true;
+		console.log("keydown");
     }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = true;
+        P1.leftPressed = true;
     }
     else if(e.key == "Down" || e.key == "ArrowDown") {
-        downPressed = true;
+        P1.downPressed = true;
     }
     else if(e.key == "Up" || e.key == "ArrowUp") {
-        upPressed = true;
+        P1.upPressed = true;
     }
     else if(e.key == "Enter") {
-        enterPressed = true;
+        P1.enterPressed = true;
     }
 }
 
 function keyUpHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = false;
+        P1.rightPressed = false;
+		console.log("keyup");
     }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = false;
+        P1.leftPressed = false;
     }
     else if(e.key == "Down" || e.key == "ArrowDown") {
-        downPressed = false;
+        P1.downPressed = false;
     }
     else if(e.key == "Up" || e.key == "ArrowUp") {
-        upPressed = false;
+        P1.upPressed = false;
     }
     else if(e.key == "Enter") {
-        enterPressed = false;
+        P1.enterPressed = false;
+		P1.settingBomb = false;
     }
 }
 
@@ -119,8 +122,9 @@ function drawBackground(ctx) {
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBackground(ctx);
-
-	if(rightPressed) {
+	P1.move();
+	P1.setBomb();
+	/*if(rightPressed) {
 		manX += 4;
 		if(rows[Math.floor((manY+manHeight/2)/50)][Math.floor((manX+manWidth/2)/50)] == "."){
 			if(rows[Math.floor((manY+manHeight)/50)][Math.floor((manX+manWidth)/50)] != "."||rows[Math.floor((manY)/50)][Math.floor((manX+manWidth)/50)] != "."){
@@ -128,13 +132,13 @@ function draw() {
 			}
 		}
 		
-		/*
-		if(rows[Math.floor((manY+manHeight/2)/50)][Math.floor((manX+manWidth/2)/50)] == bomb){
+		
+		if(rows[Math.floor((manY+manHeight/2)/50)][Math.floor((manX+manWidth/2)/50)] == "B"){
 			if(rows[Math.floor((manY+manHeight/2)/50)][Math.floor((manX+manWidth/2)/50)+1] != "."){
 				manX -= 4;
 			}
 		}
-		*/
+		
 	}
 	else if(leftPressed) {
 		manX -= 4;
@@ -164,15 +168,17 @@ function draw() {
 		time = 100;
 		bombX = Math.floor(manX/50)*50+5;
 		bombY = Math.floor(manY/50)*50+5;
+		rows[Math.floor(manY/50)][Math.floor(manX/50)] = "B";
 	}
 	if(time > 0){
 		drawRect(ctx, RED, bombX, bombY, manWidth, manHeight);
 		time -=1;
 	}
-	else{
+	if(time == 1){
 		console.log(time);
-	}
-	drawRect(ctx, GOLD, manX, manY, manWidth, manHeight);
+		rows[Math.floor(bombY/50)][Math.floor(bombX/50)] = ".";
+	}*/
+	drawRect(ctx, GOLD, P1.x, P1.y, manWidth, manHeight);
 }
 
 setInterval(draw, 10);
