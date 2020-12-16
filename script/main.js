@@ -86,7 +86,7 @@ function keyDownHandler(e) {
     else if(e.key == "d") {
         P2.rightPressed = true;
     }
-    if(e.key == "Space") {
+    if(e.key == " ") {
         P2.enterPressed = true;
     }
 }
@@ -121,7 +121,7 @@ function keyUpHandler(e) {
     else if(e.key == "d") {
         P2.rightPressed = false;
     }
-    if(e.key == "Space") {
+    if(e.key == " ") {
         P2.enterPressed = false;
 		P2.settingBomb = false;
     }

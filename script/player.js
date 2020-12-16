@@ -65,6 +65,7 @@ class Player{
 	}
 	setBomb(){
 		if(this.enterPressed && this.bombAmount < this.bomb.length && this.settingBomb == false) {
+			console.log("setBomb");
 			this.bomb[this.bombAmount].time = 100;
 			this.bomb[this.bombAmount].x = Math.floor(this.x/50)*50+5;
 			this.bomb[this.bombAmount].y = Math.floor(this.y/50)*50+5;
