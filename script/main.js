@@ -65,14 +65,29 @@ function keyDownHandler(e) {
     else if(e.key == "Left" || e.key == "ArrowLeft") {
         P1.leftPressed = true;
     }
-    else if(e.key == "Down" || e.key == "ArrowDown") {
+    if(e.key == "Down" || e.key == "ArrowDown") {
         P1.downPressed = true;
     }
     else if(e.key == "Up" || e.key == "ArrowUp") {
         P1.upPressed = true;
     }
-    else if(e.key == "Enter") {
+    if(e.key == "Enter") {
         P1.enterPressed = true;
+    }
+    if(e.key == "w") {
+        P2.upPressed = true;
+    }
+    else if(e.key == "s") {
+        P2.downPressed = true;
+    }
+    if(e.key == "a") {
+        P2.leftPressed = true;
+    }
+    else if(e.key == "d") {
+        P2.rightPressed = true;
+    }
+    if(e.key == "Space") {
+        P2.enterPressed = true;
     }
 }
 
@@ -84,15 +99,31 @@ function keyUpHandler(e) {
     else if(e.key == "Left" || e.key == "ArrowLeft") {
         P1.leftPressed = false;
     }
-    else if(e.key == "Down" || e.key == "ArrowDown") {
+    if(e.key == "Down" || e.key == "ArrowDown") {
         P1.downPressed = false;
     }
     else if(e.key == "Up" || e.key == "ArrowUp") {
         P1.upPressed = false;
     }
-    else if(e.key == "Enter") {
+    if(e.key == "Enter") {
         P1.enterPressed = false;
 		P1.settingBomb = false;
+    }
+    if(e.key == "w") {
+        P2.upPressed = false;
+    }
+    else if(e.key == "s") {
+        P2.downPressed = false;
+    }
+    if(e.key == "a") {
+        P2.leftPressed = false;
+    }
+    else if(e.key == "d") {
+        P2.rightPressed = false;
+    }
+    if(e.key == "Space") {
+        P2.enterPressed = false;
+		P2.settingBomb = false;
     }
 }
 
@@ -123,7 +154,17 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBackground(ctx);
 	P1.move();
+	P2.move();
 	P1.setBomb();
+	P2.setBomb();
+	for(let y in rows) {
+		let row = rows[y];
+		for(let x in row) {
+			if(row[x] == "B") {
+				drawRect(ctx, RED, x*50+5, y*50+5, manWidth, manHeight);
+			}
+		}
+	}
 	/*if(rightPressed) {
 		manX += 4;
 		if(rows[Math.floor((manY+manHeight/2)/50)][Math.floor((manX+manWidth/2)/50)] == "."){
@@ -179,6 +220,7 @@ function draw() {
 		rows[Math.floor(bombY/50)][Math.floor(bombX/50)] = ".";
 	}*/
 	drawRect(ctx, GOLD, P1.x, P1.y, manWidth, manHeight);
+	drawRect(ctx, GOLD, P2.x, P2.y, manWidth, manHeight);
 }
 
 setInterval(draw, 10);
