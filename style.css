@@ -139,7 +139,6 @@ menu {
 }
 #socialmedia {
     display: flex;
-    width: 18%;
     height: 50px;
     justify-content: flex-start;
     left:0;
