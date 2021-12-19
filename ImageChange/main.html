@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="Style.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+</h4>
+點選圖片即可切換當前圖片<br/>
+點選當前圖片即可暫停撥放
+    <div id="thumbs">
+        <img class="small" src="1.jpg" />
+        <img class="small" src="2.jpg" />
+        <img class="small" src="3.jpg" />
+        <img class="small" src="4.jpg" />
+        <img class="small" src="5.jpg" />
+        <img class="small" src="6.jpg" />
+    </div>
+    <div id="big">
+        <img src="7.jpg" onclick="stopOrRestart()" href="#"/>
+        <div id="progressBar"></div>
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>
