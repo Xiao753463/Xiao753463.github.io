@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="nav">
+        <div id="logo"><a href="/"><img  style="cursor: pointer !important;" src="logo.png" width="200" alt="" srcset=""></a></div>
+        <div id="acc"> 
+            <button id="accountBtn" type="button" ></button>
+            
+            <div id="user">
+                <div id="u_name">用戶名</div>
+                <div id="u_photo"></div>
+                <div id="u_body"><a href="learnRecording.html">學習歷程</a></div>
+                <div id="u_btn">
+                    <button id="saveBtn" type="button"></button>
+                    <button id="signOutBtn" type="button"></button>
+                    <button id="deleteBtn" type="button"></button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- <button id="signOutBtn" type="button"></button>
+        <button id="saveBtn" type="button"></button>
+        <button id="deleteBtn" type="button"></button> -->
+    </div>
+    
+    <div id="main">
+    <div id="title"></div>
+    <iframe id="dive" name="dive" src="https://dive.nutn.edu.tw/Experiment/kaleTestExperiment5.jsp?eid=22630&record=false" frameborder="0" id="iframe_" width="1024px" height="768px"></iframe>
+    </div>
+    <script src="https://dive.nutn.edu.tw/Experiment/js/dive.linker.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script src="js/dive.js
+    "></script>
+</body>
+</html>
