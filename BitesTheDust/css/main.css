@@ -27,7 +27,7 @@ body{
 		width: 100%;
 		text-align:center;
 	}
-#startBtn {
+#startBtn,#introBtn {
 	width: 100%;
 	color: white;
 	width: 150px;
@@ -70,4 +70,8 @@ body{
 	margin:100px;
 	z-index : 10;
 	display : none;
+}
+#intro{
+	font-size : 13pt;
+
 }

@@ -507,6 +507,11 @@ function start(){
 	x.muted = false; 
     x.play(); 
 }
+function intro(){
+	document.getElementById("intro").style.display = "block";
+	document.getElementById("main").style.display = "none";
+	
+}
 setInterval(()=>{clouds.push(
 		new Cloud(0, getRandomInt(300)+100, getRandomInt(80)+20, getRandomInt(30)+20, getRandomInt(15)/100),
 		new Cloud(0, getRandomInt(300)+100, getRandomInt(50)+20, getRandomInt(40)+20, getRandomInt(15)/100),
