@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/Xiao753463.github.io/static/css/main.f0357335.css",
+    "main.css": "/Xiao753463.github.io/static/css/main.e6c13ad2.css",
     "main.js": "/Xiao753463.github.io/static/js/main.c851c603.js",
     "static/js/453.76d3ed9d.chunk.js": "/Xiao753463.github.io/static/js/453.76d3ed9d.chunk.js",
-    "static/media/banner.jpg": "/Xiao753463.github.io/static/media/banner.7a6b4c67c4ec92faa4f3.jpg",
-    "static/media/picture.jpg": "/Xiao753463.github.io/static/media/picture.82331e72c4e9f42c9b85.jpg",
     "index.html": "/Xiao753463.github.io/index.html",
-    "main.f0357335.css.map": "/Xiao753463.github.io/static/css/main.f0357335.css.map",
+    "main.e6c13ad2.css.map": "/Xiao753463.github.io/static/css/main.e6c13ad2.css.map",
     "main.c851c603.js.map": "/Xiao753463.github.io/static/js/main.c851c603.js.map",
     "453.76d3ed9d.chunk.js.map": "/Xiao753463.github.io/static/js/453.76d3ed9d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0357335.css",
+    "static/css/main.e6c13ad2.css",
     "static/js/main.c851c603.js"
   ]
 }
