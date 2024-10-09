@@ -2,6 +2,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
   }
 body {
     background-color: rgb(248, 248, 248);
@@ -11,8 +12,16 @@ body {
     flex-direction: row
 }
 * {
+    font-family: 'Noto Sans TC', sans-serif;
     margin: 0;
     padding: 0;
+    cursor: default;
+}
+a{
+    cursor: pointer;
+}
+a *{
+    cursor: pointer;
 }
 #main {
     z-index: 0;
@@ -20,9 +29,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content:flex-start;
-    padding-top: 100px;
+    padding-top: 60px;
     height: 600px;
-    width: 80%;
+    width: 100%;
 }
     #main button {
         margin:15px;
@@ -85,7 +94,7 @@ body {
             color: white;
         }
 menu {
-    z-index: 1;
+    z-index: 4;
     position: fixed;
     background-color: rgba(255, 255, 255,0.9);
     box-shadow: 0px 0.1px 0.1px 1px rgba(0, 0, 0,0.1);
@@ -217,22 +226,153 @@ footer {
         width: 100%;
         height: 110px;
     }
-#products {
+#MyName {
+    margin: 2% 0 10% 0;
+    font-weight:800;
+    font-size:32pt;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    background-image: url(imgs/banner.jpg);
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: 2;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+banner::after{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    transition: .3s;
+}
+banner:hover::after{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}
+banner:hover #banner-div{
+    transform: translateY(-5px);
+    transition: .3s;
+}
+#banner-div{
+    position: relative; /* 確保它的 z-index 可以生效 */
+    z-index: 3; /* 確保 #banner-div 在最上層 */
+    transition: .3s;
+}
+#scroll{
+    z-index: 4;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#scroll p{
+    color: white;
+    font-size: 15px;
+    padding-bottom: 56px;
+    transform: scale(0.75);
+    animation: scrollTextAnimate 2.5s infinite;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.arrow span {
+    display: block;
+    width: .5vw;
+    height: .5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2.5s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.4s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.6s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+@keyframes scrollTextAnimate {
+    0% {
+        opacity: 1;
+        transform: translate(0px, -20px);
+    }
+    10%{
+        transform: translate(0px, -25px);
+    }
+    50% {
+    }
+    70%{
+        opacity: 1;
+        transform: translate(0px, -5px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0px, -15px);
+    }
+}
+.title{
     width: 100%;
     display: flex;
     justify-content: center;
+}
+.title h2{
+    color: rgb(50, 50, 50);
+    font-weight: 700;
+    font-size: 62pt;
+    letter-spacing: 4px;
+}
+#works{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 3rem 4.5rem 6rem;
+    position: relative;
+    width: 40%;
+    text-align: center;
     flex-wrap: wrap;
 }
-#MyName {
-    margin: 2% 0 10% 0;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size:16pt;
-}
-#test2 {
+.w_item{
     width: 100%;
-    height:100px;
 }
-.btn{
-    width: 189px;
-    height: 191px;
+.w_item img{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+    height: auto;
 }
